@@ -21,7 +21,7 @@ class Invoice
 
         string getPermitPrice();
         double getDiscount();
-        double getServiceCharfe();
+        double getServiceCharge();
 
         void printOutput(string, string, string, int, string, double);
 };

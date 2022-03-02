@@ -1,6 +1,6 @@
 #include "Invoice.h"
 
-bool setPermitPrice(string p)
+bool Invoice::setPermitPrice(string p)
 {
     bool valid = false;
 
@@ -10,7 +10,7 @@ bool setPermitPrice(string p)
     }
     return valid;
 }
-bool setDiscount(double d)
+bool Invoice::setDiscount(double d)
 {
     bool valid = false;
 
@@ -20,7 +20,7 @@ bool setDiscount(double d)
     }
     return valid;
 }
-bool setServiceCharge(double s)
+bool Invoice::setServiceCharge(double s)
 {
     bool valid = false;
 
@@ -31,15 +31,15 @@ bool setServiceCharge(double s)
     return valid;
 }
 
-string getPermitPrice()
+string Invoice::getPermitPrice()
 {
-
+    return permitPrice;
 }
-double getDiscount()
+double Invoice::getDiscount()
 {
-
+    return discount;
 }
-double getServiceCharfe()
+double Invoice::getServiceCharge()
 {
-
+    return serviceCharge;
 }
