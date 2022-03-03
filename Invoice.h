@@ -8,21 +8,22 @@ using namespace std;
 class Invoice
 {
     private:
-        string permitPrice {"\0"};
+        double permitPrice {0.0};
         double discount {0.0}, serviceCharge {0.0};
     public:
         Invoice() = default;
-        Invoice(string p, double d, double s) : permitPrice{p}, 
+        Invoice(double p, double d, double s) : permitPrice{p}, 
             discount{d}, serviceCharge{s} {}
 
-        bool setPermitPrice(string p);
+        bool setPermitPrice(double p);
         bool setDiscount(double d);
         bool setServiceCharge(double s);
 
-        string getPermitPrice();
+        double getPermitPrice();
         double getDiscount();
         double getServiceCharge();
 
         void printOutput(string, string, string, int, string, double);
+        double calctotal();
 };
 #endif

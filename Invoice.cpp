@@ -1,10 +1,10 @@
 #include "Invoice.h"
 
-bool Invoice::setPermitPrice(string p)
+bool Invoice::setPermitPrice(double p)
 {
     bool valid = false;
 
-    if (!p.empty())
+    if (p < 0.0)
     {
         valid = true;
     }
@@ -31,7 +31,7 @@ bool Invoice::setServiceCharge(double s)
     return valid;
 }
 
-string Invoice::getPermitPrice()
+double Invoice::getPermitPrice()
 {
     return permitPrice;
 }
@@ -42,4 +42,8 @@ double Invoice::getDiscount()
 double Invoice::getServiceCharge()
 {
     return serviceCharge;
+}
+double calctotal()
+{
+
 }
