@@ -5,10 +5,12 @@
 #include "Invoice.h"
 
 using namespace std;
+
 void printVechile();
 void printPermit();
 Car mainCarProgram(string make, string model, string carYear, string lowEmission, string tint);
-double mainPermitType(int permitType);
+double mainPermitType(int permitType, double annualPermit, 
+    double semesterPermit, double dayPermit, double discount, double service);
 
 
 int main()
@@ -37,24 +39,25 @@ int main()
 
         cout << "Shain\n";
         // Calculates the total price based on permit
-        void printPermit()
+        void printPermit();
         cin >> permitType;
+
         if (permitType == 1)
         {
             Invoice voice1(annualPermit, discount, service);
-            total = voice.calcDisTotal(permit, discount, ervice);
+            total = voice1.calcDisTotal(annualPermit, discount, service);
             cout << "Total: " << total << endl;
         }
         else if (permitType == 2)
         {
             Invoice voice2(semesterPermit, discount, service);
-            total = voice.calcDisTotal(permit, discount, ervice);
+            total = voice2.calcDisTotal(semesterPermit, discount, service);
             cout << "Total: " << total << endl;
         }
         else if (permitType == 2)
         {
             Invoice voice3(dayPermit, discount, service);
-            total = voice.calcDisTotal(permit, discount, ervice);
+            total = voice3.calcDisTotal(dayPermit, discount, service);
             cout << "Total: " << total << endl;
         }
         else 
@@ -105,27 +108,30 @@ int main()
             vehcile = mainCarProgram(make, model, carYear, lowEmission, tint);
             
             // Calculates the total price based on permit
-            void printPermit()
+            printPermit();
             cin >> permitType;
-            total = mainPermitType(int permitType);
+            total = mainPermitType(permitType, annualPermit, 
+                 semesterPermit, dayPermit, discount, service);
         }
         else if (vehcileType == 2)
         {
             cout << "Jacob\n";
 
             // Calculates the total price based on permit
-            void printPermit()
+            printPermit();
             cin >> permitType;
-            total = mainPermitType(int permitType);
+            total = mainPermitType(permitType, annualPermit, 
+                 semesterPermit, dayPermit, discount, service);
         }
         else if (vehcileType == 3)
         {
             cout << "Shain\n";
 
             // Calculates the total price based on permit
-            void printPermit()
+            printPermit();
             cin >> permitType;
-            total = mainPermitType(int permitType);
+            total = mainPermitType(permitType, annualPermit, 
+                 semesterPermit, dayPermit, discount, service);
         }
         else 
         {
@@ -145,27 +151,30 @@ int main()
             vehcile = mainCarProgram(make, model, carYear, lowEmission, tint);
             
             // Calculates the total price based on permit
-            void printPermit()
+            printPermit();
             cin >> permitType;
-            total = mainPermitType(int permitType);
+            total = mainPermitType(permitType, annualPermit, 
+                 semesterPermit, dayPermit, discount, service);
         }
         else if (vehcileType == 2)
         {
             cout << "Jacob\n";
 
             // Calculates the total price based on permit
-            void printPermit()
+            printPermit();
             cin >> permitType;
-            total = mainPermitType(int permitType);
+            total = mainPermitType(permitType, annualPermit, 
+                 semesterPermit, dayPermit, discount, service);
         }
         else if (vehcileType == 3)
         {
             cout << "Shain\n";
 
             // Calculates the total price based on permit
-            void printPermit()
+            printPermit();
             cin >> permitType;
-            total = mainPermitType(int permitType);
+            total = mainPermitType(permitType, annualPermit, 
+                 semesterPermit, dayPermit, discount, service);
         }
         else 
         {
@@ -225,30 +234,31 @@ Car mainCarProgram(string make, string model, string carYear, string lowEmission
     return vehcile;
 }
 
-double mainPermitType(int permitType)
+double mainPermitType(int permitType, double annualPermit, 
+    double semesterPermit, double dayPermit, double discount, double service)
 {
     double total;
     if (permitType == 1)
     {
         Invoice voice1(annualPermit, discount, service);
-        total = voice.calcTotal(annualPermit, service);
+        total = voice1.calcTotal(annualPermit, service);
         cout << "Total: " << total << endl;
     }
     else if (permitType == 2)
     {
         Invoice voice2(semesterPermit, discount, service);
-        total = voice.calcTotal(semesterPermit, service);
+        total = voice2.calcTotal(semesterPermit, service);
         cout << "Total: " << total << endl;
     }
     else if (permitType == 2)
     {
         Invoice voice3(dayPermit, discount, service);
-        total = voice.calcTotal(dayPermit, service);
+        total = voice3.calcTotal(dayPermit, service);
         cout << "Total: " << total << endl;
     }
     else 
     {
         cout << "INVALID INPUT GOODBYE!" << endl;
     }
-    return total
+    return total;
 }
