@@ -1,39 +1,41 @@
 #include <iostream>
-#include <string>
+//#include "Employee.h"
+//#include "ExtraLarge.cpp"
 #include "StudentCar.h"
 
+
 using namespace std;
-Car mainCarProgram(string make, string model, string carYear, string lowEmission, string tint)
+
+void printOutput(Student &stud)
 {
-    // Car class
-
-    cout << "Enter the make of the car: ";
-    cin >> make;
-
-    cout << "Enter the model of the car: ";
-    cin >> model;
-    
-    cout << "Enter the year of the car: ";
-    cin >> carYear;
-    
-    cout << "Enter yes if the car is low emission or no if it is not:: ";
-    cin >> lowEmission;
-
-    cout << "Enter yes if the car is tinted or no if it is not: ";
-    cin >> tint;
-    // Creates the object for student
-    Car vehcile(make, model, carYear, lowEmission, tint);
-
-    return vehcile;
+    cout << "Name: " << stud.getName() << endl;
+    cout << "Email: " << stud.getEmail() << endl;
+    cout << "Address: " << stud.getAddress() << endl;
+    cout << "Year: " << stud.getYear() << endl;
+    cout << "Gpa: " << stud.getGpa() << endl;
 }
 int main()
 {
-    string make, model, carYear, 
-    lowEmission, tint; 
-    Car vehcile;
-    //Car vehcile(make, model, carYear, lowEmission, tint); 
-    vehcile = mainCarProgram(make, model, carYear, lowEmission, tint);
+    string name, email, address, year;
+        double gpa;
+        
+        cin.ignore();   // Used to ignore the new line in the getline function
+        
+        // get the whole line includeing white spaces
+        cout << "Enter your name: ";
+        getline (cin,name);    
+        cout << "Enter your email: ";
+        getline (cin,email);         
+        cout << "Enter your address: ";
+        getline (cin,address);
+        cout << "Graduate or undergraduate student: ";
+        getline (cin,year);
+        cout << "Enter your gpa: ";
+        cin >> gpa;
 
-    cout << vehcile.getModel();
+        // Creates the object for student
+        Student stud(name, email, address, year, gpa);
+
+        printOutput(stud);
     return 0;
 }

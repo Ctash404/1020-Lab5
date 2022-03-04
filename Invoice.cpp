@@ -53,3 +53,20 @@ double Invoice::calcDisTotal(double permit, double discount, double service)
 {
     return permit + service - (permit * discount);
 }
+// Prints output of a student and their car
+void Invoice::printOutput(Student &stud, Car &vehcile, double total)
+{
+    cout << "Name: " << stud.getName() << endl;
+    cout << "Email: " << stud.getEmail() << endl;
+    cout << "Address: " << stud.getAddress() << endl;
+    cout << "Year: " << stud.getYear() << endl;
+    cout << "Gpa: " << stud.getGpa() << endl;
+
+    cout << "Make: " << vehcile.getMake() << endl;
+    cout << "Model: " << vehcile.getModel() << endl;
+    cout << "Year: " << vehcile.getYear() << endl;
+    cout << "Low emission: " << vehcile.getLowEmission() << endl;
+    cout << "Tinted: " << vehcile.getTinted() << endl;
+
+    cout << "Total" << total << endl;
+}

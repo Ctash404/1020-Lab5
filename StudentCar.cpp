@@ -1,4 +1,4 @@
-#include "Lab5.h"
+#include "StudentCar.h"
 
 // Functions for student class
 bool Student::setName(string n)

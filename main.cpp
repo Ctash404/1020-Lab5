@@ -1,7 +1,7 @@
 #include <iostream>
 //#include "Employee.h"
 //#include "ExtraLarge.cpp"
-#include "Lab5.h"
+#include "StudentCar.h"
 #include "Invoice.h"
 
 using namespace std;
@@ -34,6 +34,7 @@ int main()
     cin >> customerType;
 
     // Validation for the user's choice and finds the correct type
+    //Employee type
     if (customerType == 1)
     {
 
@@ -65,6 +66,8 @@ int main()
             cout << "INVALID INPUT GOODBYE!" << endl;
         }
     }
+
+    // Student type
     else if (customerType == 2)
     {
         string name, email, address, year;
@@ -86,13 +89,6 @@ int main()
 
         // Creates the object for student
         Student stud(name, email, address, year, gpa);
-        
-        // Prints the students information
-        cout << "Name: " << stud.getName() << endl;
-        cout << "Email: " << stud.getEmail() << endl;
-        cout << "Address: " << stud.getAddress() << endl;
-        cout << "Year: " << stud.getYear() << endl;
-        cout << "Gpa: " << stud.getGpa() << endl;
 
         // Prints the vechile menu and then gets the user's input
         printVechile();
@@ -112,6 +108,8 @@ int main()
             cin >> permitType;
             total = mainPermitType(permitType, annualPermit, 
                  semesterPermit, dayPermit, discount, service);
+
+            printOutput(&stud, &vehcile, total);
         }
         else if (vehcileType == 2)
         {
@@ -138,6 +136,8 @@ int main()
             cout << "INVALID INPUT GOODBYE!" << endl;
         }
     }
+
+    // Visitor type
     else if (customerType == 3)
     {
         cout << "Jacob\n";
@@ -235,7 +235,7 @@ Car mainCarProgram(string make, string model, string carYear, string lowEmission
 }
 
 double mainPermitType(int permitType, double annualPermit, 
-    double semesterPermit, double dayPermit, double discount, double service)
+        double semesterPermit, double dayPermit, double discount, double service)
 {
     double total;
     if (permitType == 1)

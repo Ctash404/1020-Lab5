@@ -1,5 +1,5 @@
-#ifndef LAB_5_H_
-#define LAB_5_H_
+#ifndef STUDENT_CAR_H_
+#define STUDENT_CAR_H_
 #include <iostream>
 #include <string>
 using namespace std;

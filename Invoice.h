@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "StudentCar.h"
 using namespace std;
 
 class Invoice
@@ -23,7 +24,8 @@ class Invoice
         double getDiscount();
         double getServiceCharge();
 
-        void printOutput(string, string, string, int, string, double);
+        void printOutput(Student &stud, Car &vehcile, double total);
+        
         double calcTotal(double permit, double service);
         double calcDisTotal(double permit, double discount, double service);
 };
