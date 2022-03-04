@@ -43,7 +43,13 @@ double Invoice::getServiceCharge()
 {
     return serviceCharge;
 }
-double calctotal()
+// Calculates total without discount
+double Invoice::calcTotal(double permit, double service)
 {
-
+    return service + permit;
+}
+// Calculates total with the discount
+double calcDisTotal(double permit, double discount, double service)
+{
+    return permit + service - (permit * discount);
 }

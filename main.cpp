@@ -10,8 +10,9 @@ int main()
 {
     int customerType;
     const double annualPermit {200.0}, semesterPermit {100.0}, dayPermit {10.0};
-    const double emplyeeDiscount {0.1};
+    const double discount {0.1};
     const double service {10.0};
+    double total {0.0};
 
     cout << "\t1 - Employee" << endl;
     cout << "\t2 - Student" << endl;
@@ -45,11 +46,11 @@ int main()
         Student stud(name, email, address, year, gpa);
         
         // Prints the students information
-        cout << stud.getName() << endl;
-        cout << stud.getEmail() << endl;
-        cout << stud.getAddress() << endl;
-        cout << stud.getYear() << endl;
-        cout << stud.getGpa() << endl;
+        cout << "Name: " << stud.getName() << endl;
+        cout << "Email: " << stud.getEmail() << endl;
+        cout << "Address: " << stud.getAddress() << endl;
+        cout << "Year: " << stud.getYear() << endl;
+        cout << "Gpa: " << stud.getGpa() << endl;
 
 
 
@@ -82,10 +83,14 @@ int main()
         
         // Prints the students information
         cout << "Make: " << vechile.getMake() << endl;
-        cout << "Model: " <<vechile.getModel() << endl;
+        cout << "Model: " << vechile.getModel() << endl;
         cout << "Year: " << vechile.getYear() << endl;
         cout << "Low emission: " << vechile.getLowEmission() << endl;
         cout << "Tinted: " << vechile.getTinted() << endl;
     }
+
+    Invoice voice(annualPermit, discount, service);
+    total = voice.calcTotal(annualPermit, service);
+
     return 0;
 }

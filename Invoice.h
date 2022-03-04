@@ -24,6 +24,7 @@ class Invoice
         double getServiceCharge();
 
         void printOutput(string, string, string, int, string, double);
-        double calctotal();
+        double calcTotal(double permit, double service);
+        double calcDisTotal(double permit, double discount, double service);
 };
 #endif
