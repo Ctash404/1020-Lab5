@@ -7,13 +7,15 @@
 using namespace std;
 void printVechile();
 void printPermit();
+Car mainCarProgram(string make, string model, string carYear, string lowEmission, string tint);
+double mainPermitType(int permitType);
 
 
 int main()
 {
     // Selction variables
     int customerType;
-    int vechileType;
+    int vehcileType;
     int permitType;
 
     // Variable amounts for prices
@@ -32,71 +34,33 @@ int main()
     // Validation for the user's choice and finds the correct type
     if (customerType == 1)
     {
+
         cout << "Shain\n";
-        // Prints the vechile menu and then gets the user's input
-        printVechile();
-        cin >> vechileType;
-
-        // Validation for the user's input of the vechile type
-        if (vechileType == 1)
+        // Calculates the total price based on permit
+        void printPermit()
+        cin >> permitType;
+        if (permitType == 1)
         {
-            // Car class
-            string make, model, carYear, 
-            lowEmission, tint;
-        
-        
-            cin.ignore();   // Used to ignore the new line in the getline function
-            // get the whole line includeing white spaces
-            cout << "Enter the make of the car: ";
-            cin >> make;
-        
-            cout << "Enter the model of the car: ";
-            cin >> model;
-         
-            cout << "Enter the year of the car: ";
-            cin >> carYear;
-         
-            cout << "Enter yes if the car is low emission or no if it is not:: ";
-            cin >> lowEmission;
-        
-            cout << "Enter yes if the car is tinted or no if it is not: ";
-            cin >> tint;
-
-            // Creates the object for student
-            Car vechile(make, model, carYear, lowEmission, tint);
-        
-            // Prints the students information
-            cout << "Make: " << vechile.getMake() << endl;
-            cout << "Model: " << vechile.getModel() << endl;
-            cout << "Year: " << vechile.getYear() << endl;
-            cout << "Low emission: " << vechile.getLowEmission() << endl;
-            cout << "Tinted: " << vechile.getTinted() << endl;
-            
-            // Calculates the total price based on permit
-            void printPermit()
-            cin >> permitType;
-            if (permitType == 1)
-            {
-                Invoice voice1(annualPermit, discount, service);
-                total = voice.calcTotal(annualPermit, service);
-                cout << "Total: " << total << endl;
-            }
-            else if (permitType == 2)
-            {
-                Invoice voice2(semesterPermit, discount, service);
-                total = voice.calcTotal(semesterPermit, service);
-                cout << "Total: " << total << endl;
-            }
-            else if (permitType == 2)
-            {
-                Invoice voice3(dayPermit, discount, service);
-                total = voice.calcTotal(dayPermit, service);
-                cout << "Total: " << total << endl;
-            }
-            else 
-            {
-                cout << "INVALID INPUT GOODBYE!" << endl;
-            }
+            Invoice voice1(annualPermit, discount, service);
+            total = voice.calcDisTotal(permit, discount, ervice);
+            cout << "Total: " << total << endl;
+        }
+        else if (permitType == 2)
+        {
+            Invoice voice2(semesterPermit, discount, service);
+            total = voice.calcDisTotal(permit, discount, ervice);
+            cout << "Total: " << total << endl;
+        }
+        else if (permitType == 2)
+        {
+            Invoice voice3(dayPermit, discount, service);
+            total = voice.calcDisTotal(permit, discount, ervice);
+            cout << "Total: " << total << endl;
+        }
+        else 
+        {
+            cout << "INVALID INPUT GOODBYE!" << endl;
+        }
     }
     else if (customerType == 2)
     {
@@ -104,19 +68,16 @@ int main()
         double gpa;
         
         cin.ignore();   // Used to ignore the new line in the getline function
+        
         // get the whole line includeing white spaces
         cout << "Enter your name: ";
-        getline (cin,name);
-        
+        getline (cin,name);    
         cout << "Enter your email: ";
-        getline (cin,email); 
-         
+        getline (cin,email);         
         cout << "Enter your address: ";
         getline (cin,address);
-         
         cout << "Graduate or undergraduate student: ";
         getline (cin,year);
-        
         cout << "Enter your gpa: ";
         cin >> gpa;
 
@@ -132,76 +93,39 @@ int main()
 
         // Prints the vechile menu and then gets the user's input
         printVechile();
-        cin >> vechileType;
+        cin >> vehcileType;
 
         // Validation for the user's input of the vechile type
-        if (vechileType == 1)
+        if (vehcileType == 1)
         {
-            // Car class
             string make, model, carYear, 
-            lowEmission, tint;
-        
-        
-            cin.ignore();   // Used to ignore the new line in the getline function
-            // get the whole line includeing white spaces
-            cout << "Enter the make of the car: ";
-            cin >> make;
-        
-            cout << "Enter the model of the car: ";
-            cin >> model;
-         
-            cout << "Enter the year of the car: ";
-            cin >> carYear;
-         
-            cout << "Enter yes if the car is low emission or no if it is not:: ";
-            cin >> lowEmission;
-        
-            cout << "Enter yes if the car is tinted or no if it is not: ";
-            cin >> tint;
-
-            // Creates the object for student
-            Car vechile(make, model, carYear, lowEmission, tint);
-        
-            // Prints the students information
-            cout << "Make: " << vechile.getMake() << endl;
-            cout << "Model: " << vechile.getModel() << endl;
-            cout << "Year: " << vechile.getYear() << endl;
-            cout << "Low emission: " << vechile.getLowEmission() << endl;
-            cout << "Tinted: " << vechile.getTinted() << endl;
+            lowEmission, tint; 
+            Car vehcile;
+            //Car vehcile(make, model, carYear, lowEmission, tint); 
+            vehcile = mainCarProgram(make, model, carYear, lowEmission, tint);
             
             // Calculates the total price based on permit
             void printPermit()
             cin >> permitType;
-            if (permitType == 1)
-            {
-                Invoice voice1(annualPermit, discount, service);
-                total = voice.calcTotal(annualPermit, service);
-                cout << "Total: " << total << endl;
-            }
-            else if (permitType == 2)
-            {
-                Invoice voice2(semesterPermit, discount, service);
-                total = voice.calcTotal(semesterPermit, service);
-                cout << "Total: " << total << endl;
-            }
-            else if (permitType == 2)
-            {
-                Invoice voice3(dayPermit, discount, service);
-                total = voice.calcTotal(dayPermit, service);
-                cout << "Total: " << total << endl;
-            }
-            else 
-            {
-                cout << "INVALID INPUT GOODBYE!" << endl;
-            }
+            total = mainPermitType(int permitType);
         }
-        else if (vechileType == 2)
+        else if (vehcileType == 2)
         {
             cout << "Jacob\n";
+
+            // Calculates the total price based on permit
+            void printPermit()
+            cin >> permitType;
+            total = mainPermitType(int permitType);
         }
-        else if (vechileType == 3)
+        else if (vehcileType == 3)
         {
             cout << "Shain\n";
+
+            // Calculates the total price based on permit
+            void printPermit()
+            cin >> permitType;
+            total = mainPermitType(int permitType);
         }
         else 
         {
@@ -211,72 +135,42 @@ int main()
     else if (customerType == 3)
     {
         cout << "Jacob\n";
-        printVechile();
 
-        // Prints the vechile menu and then gets the user's input
-        printVechile();
-        cin >> vechileType;
-
-        // Validation for the user's input of the vechile type
-        if (vechileType == 1)
+        if (vehcileType == 1)
         {
-            // Car class
             string make, model, carYear, 
-            lowEmission, tint;
-        
-        
-            cin.ignore();   // Used to ignore the new line in the getline function
-            // get the whole line includeing white spaces
-            cout << "Enter the make of the car: ";
-            cin >> make;
-        
-            cout << "Enter the model of the car: ";
-            cin >> model;
-         
-            cout << "Enter the year of the car: ";
-            cin >> carYear;
-         
-            cout << "Enter yes if the car is low emission or no if it is not:: ";
-            cin >> lowEmission;
-        
-            cout << "Enter yes if the car is tinted or no if it is not: ";
-            cin >> tint;
-
-            // Creates the object for student
-            Car vechile(make, model, carYear, lowEmission, tint);
-        
-            // Prints the students information
-            cout << "Make: " << vechile.getMake() << endl;
-            cout << "Model: " << vechile.getModel() << endl;
-            cout << "Year: " << vechile.getYear() << endl;
-            cout << "Low emission: " << vechile.getLowEmission() << endl;
-            cout << "Tinted: " << vechile.getTinted() << endl;
+            lowEmission, tint; 
+            Car vehcile;
+            //Car vehcile(make, model, carYear, lowEmission, tint); 
+            vehcile = mainCarProgram(make, model, carYear, lowEmission, tint);
             
             // Calculates the total price based on permit
             void printPermit()
             cin >> permitType;
-            if (permitType == 1)
-            {
-                Invoice voice1(annualPermit, discount, service);
-                total = voice.calcTotal(annualPermit, service);
-                cout << "Total: " << total << endl;
-            }
-            else if (permitType == 2)
-            {
-                Invoice voice2(semesterPermit, discount, service);
-                total = voice.calcTotal(semesterPermit, service);
-                cout << "Total: " << total << endl;
-            }
-            else if (permitType == 2)
-            {
-                Invoice voice3(dayPermit, discount, service);
-                total = voice.calcTotal(dayPermit, service);
-                cout << "Total: " << total << endl;
-            }
-            else 
-            {
-                cout << "INVALID INPUT GOODBYE!" << endl;
-            }
+            total = mainPermitType(int permitType);
+        }
+        else if (vehcileType == 2)
+        {
+            cout << "Jacob\n";
+
+            // Calculates the total price based on permit
+            void printPermit()
+            cin >> permitType;
+            total = mainPermitType(int permitType);
+        }
+        else if (vehcileType == 3)
+        {
+            cout << "Shain\n";
+
+            // Calculates the total price based on permit
+            void printPermit()
+            cin >> permitType;
+            total = mainPermitType(int permitType);
+        }
+        else 
+        {
+            cout << "INVALID INPUT GOODBYE!" << endl;
+        }
     }
     else 
     {
@@ -305,4 +199,56 @@ void printPermit()
     cout << "2 - Semester" << endl;
     cout << "3 - Day" << endl;
     cout << "Enter the permit type(1, 2, or 3): ";
+}
+
+Car mainCarProgram(string make, string model, string carYear, string lowEmission, string tint)
+{
+    // Car class
+
+    cout << "Enter the make of the car: ";
+    cin >> make;
+
+    cout << "Enter the model of the car: ";
+    cin >> model;
+    
+    cout << "Enter the year of the car: ";
+    cin >> carYear;
+    
+    cout << "Enter yes if the car is low emission or no if it is not:: ";
+    cin >> lowEmission;
+
+    cout << "Enter yes if the car is tinted or no if it is not: ";
+    cin >> tint;
+    // Creates the object for student
+    Car vehcile(make, model, carYear, lowEmission, tint);
+
+    return vehcile;
+}
+
+double mainPermitType(int permitType)
+{
+    double total;
+    if (permitType == 1)
+    {
+        Invoice voice1(annualPermit, discount, service);
+        total = voice.calcTotal(annualPermit, service);
+        cout << "Total: " << total << endl;
+    }
+    else if (permitType == 2)
+    {
+        Invoice voice2(semesterPermit, discount, service);
+        total = voice.calcTotal(semesterPermit, service);
+        cout << "Total: " << total << endl;
+    }
+    else if (permitType == 2)
+    {
+        Invoice voice3(dayPermit, discount, service);
+        total = voice.calcTotal(dayPermit, service);
+        cout << "Total: " << total << endl;
+    }
+    else 
+    {
+        cout << "INVALID INPUT GOODBYE!" << endl;
+    }
+    return total
 }

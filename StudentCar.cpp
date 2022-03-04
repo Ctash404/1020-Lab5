@@ -74,6 +74,8 @@ double Student::getGpa()
 {
     return gpa;
 }
+
+
 // Functions for the car class
 bool Car::setMake(string ma)
 {
