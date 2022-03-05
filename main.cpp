@@ -78,7 +78,6 @@ int main()
             string make, model, carYear, 
             lowEmission, tint; 
             Car vehcile;
-            //Car vehcile(make, model, carYear, lowEmission, tint); 
             vehcile = mainCarProgram(make, model, carYear, lowEmission, tint);
             
             // Calculates the total price based on permit
@@ -89,8 +88,10 @@ int main()
         }
         else if (vehcileType == 2)
         {
-            string make, model, color;
-            int year, cc;
+            string make {"\0"};
+            string model {"\0"};
+            string color {"\0"};
+            int year {0}, cc {0};
             Motorcycle vehicle;
             vehicle = mainMotorcycleProgram(make, model, year, cc, color);
 
@@ -102,8 +103,8 @@ int main()
         }
         else if (vehcileType == 3)
         {
-            string make, model, specificType, purpose;
-            int year;
+            string make {"\0"}, model {"\0"}, specificType {"\0"}, purpose {"\0"};
+            int year {0};
             mainLargeProgram(make, model, year, specificType, purpose);
 
             // Calculates the total price based on permit
@@ -166,8 +167,10 @@ int main()
         }
         else if (vehcileType == 2)
         {
-            string make, model, color;
-            int year, cc;
+            string make {"\0"};
+            string model {"\0"};
+            string color {"\0"};
+            int year {0}, cc {0};
             Motorcycle vehicle;
             vehicle = mainMotorcycleProgram(make, model, year, cc, color);
 
@@ -182,8 +185,8 @@ int main()
         }
         else if (vehcileType == 3)
         {
-            string make, model, specificType, purpose;
-            int year;
+            string make {"\0"}, model {"\0"}, specificType {"\0"}, purpose {"\0"};
+            int year {0};
             mainLargeProgram(make, model, year, specificType, purpose);
 
             // Calculates the total price based on permit
@@ -239,8 +242,10 @@ int main()
         }
         else if (vehcileType == 2)
         {
-            string make, model, color;
-            int year, cc;
+            string make {"\0"};
+            string model {"\0"};
+            string color {"\0"};
+            int year {0}, cc {0};
             Motorcycle vehicle;
             vehicle = mainMotorcycleProgram(make, model, year, cc, color);
 
@@ -252,8 +257,8 @@ int main()
         }
         else if (vehcileType == 3)
         {
-            string make, model, specificType, purpose;
-            int year;
+            string make {"\0"}, model {"\0"}, specificType {"\0"}, purpose {"\0"};
+            int year {0};
             mainLargeProgram(make, model, year, specificType, purpose);
 
             // Calculates the total price based on permit
