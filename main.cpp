@@ -1,6 +1,6 @@
-#include <iostream>
-//#include "Employee.h"
-//#include "ExtraLarge.cpp"
+// Programmers: Conner Tash, Blake Moore, Shaine O'Neal
+// Program to get the user's personal and vehicle information and then find the 
+// total cost of a permit for them. Then display all the information back to them.
 #include "Student.h"
 #include "Car.h"
 #include "Invoice.h"
@@ -73,6 +73,9 @@ int main()
         
 
         Employee emp(tempName, tempEmail, tempAddress, tempYears, tempDepartment);
+
+        printVechile();
+        cin >> vehcileType;
 
         if (vehcileType == 1)
         {
@@ -253,6 +256,9 @@ int main()
         getline(cin, location); 
 
         Guest guest(name, email, address, location, age);
+
+        printVechile();
+        cin >> vehcileType;
 
         if (vehcileType == 1)
         {
