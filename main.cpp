@@ -16,7 +16,7 @@ void printPermit();
 
 // Functions to get the vehicle info
 Car mainCarProgram(string make, string model, string carYear, string lowEmission, string tint);
-Motorcycle mainMotorcycleProgram(string make, string model, string color, int year, int cc);
+Motorcycle mainMotorcycleProgram(string make, string model, int year, int cc, string color);
 ExtraLarge mainLargeProgram(string make, string model, int year, string specificType, string purpose);
 
 // Function to get the permit info
@@ -35,7 +35,7 @@ int main()
     const double annualPermit {200.0}, semesterPermit {100.0}, dayPermit {10.0};
     const double discount {0.1};
     const double service {10.0};
-    double total {0.0};
+    double total;
 
     // Menu for the customer type and get the user's input
     cout << "\t1 - Employee" << endl;
@@ -92,7 +92,7 @@ int main()
             string make, model, color;
             int year, cc;
             Motorcycle vehicle;
-            vehicle = mainMotorcycleProgram(make, model, color, year, cc);
+            vehicle = mainMotorcycleProgram(make, model, year, cc, color);
 
             // Calculates the total price based on permit
             printPermit();
@@ -160,20 +160,25 @@ int main()
             total = mainPermitType(permitType, annualPermit, 
                  semesterPermit, dayPermit, discount, service);
 
-            printOutput(&stud, &vehcile, total);
+            //Prints the output
+            Invoice out;
+            out.printOutput(stud, vehcile, total);
         }
         else if (vehcileType == 2)
         {
             string make, model, color;
             int year, cc;
             Motorcycle vehicle;
-            vehicle = mainMotorcycleProgram(make, model, color, year, cc);
+            vehicle = mainMotorcycleProgram(make, model, year, cc, color);
 
             // Calculates the total price based on permit
             printPermit();
             cin >> permitType;
             total = mainPermitType(permitType, annualPermit, 
                  semesterPermit, dayPermit, discount, service);
+
+            //Prints the output
+            Invoice out;
         }
         else if (vehcileType == 3)
         {
@@ -237,7 +242,7 @@ int main()
             string make, model, color;
             int year, cc;
             Motorcycle vehicle;
-            vehicle = mainMotorcycleProgram(make, model, color, year, cc);
+            vehicle = mainMotorcycleProgram(make, model, year, cc, color);
 
             // Calculates the total price based on permit
             printPermit();
@@ -316,7 +321,7 @@ Car mainCarProgram(string make, string model, string carYear, string lowEmission
     return vehcile;
 }
 // Main program for motorcycle
-Motorcycle mainMotorcycleProgram(string make, string model, string color, int year, int cc)
+Motorcycle mainMotorcycleProgram(string make, string model, int year, int cc, string color)
 {
     
     cout << "Enter make: ";

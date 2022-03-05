@@ -6,8 +6,9 @@ using namespace std;
 
 class Motorcycle{
     private: 
-        string make{"\0"}, model{"\0"}, color{"\0"};
+        string make{"\0"}, model{"\0"};
         int year{0}, cc{0};
+        string color{"\0"};
     
     public: 
         Motorcycle() = default;
