@@ -13,7 +13,7 @@ class Employee
         int yearsEmployed {0};
         string department {"\0"};
     public:
-        Employee(string, string, string, int, string);
+        Employee(string n, string e, string a, int y, string d) : name{n}, email{e}, address{a}, yearsEmployed{y}, department{d} {};
         
         bool setName(string n);
         bool setEmail(string e);

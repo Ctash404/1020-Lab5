@@ -1,5 +1,6 @@
 #include "Invoice.h"
 
+
 bool Invoice::setPermitPrice(double p)
 {
     bool valid = false;
@@ -54,19 +55,55 @@ double Invoice::calcDisTotal(double permit, double discount, double service)
     return permit + service - (permit * discount);
 }
 // Prints output of a student and their car
-void Invoice::printOutput(Student &stud, Car &vehcile, double total)
+void Invoice::printOutputStudent(Student &stud)
 {
     cout << "Name: " << stud.getName() << endl;
     cout << "Email: " << stud.getEmail() << endl;
     cout << "Address: " << stud.getAddress() << endl;
     cout << "Year: " << stud.getYear() << endl;
     cout << "Gpa: " << stud.getGpa() << endl;
-
+}
+void Invoice::printOutputEmployee(Employee &emp)
+{
+    cout << "Name: " << emp.getName() << endl;
+    cout << "Email: " << emp.getEmail() << endl;
+    cout << "Address: " << emp.getAddress() << endl;
+    cout << "Years: " << emp.getYearsEmployed() << endl;
+    cout << "Deparment: " << emp.getDepartment() << endl;
+}
+void Invoice::printOutputVisitor(Guest &guest)
+{
+    cout << "Name: " << guest.getName() << endl;
+    cout << "Email: " << guest.getEmail() << endl;
+    cout << "Address: " << guest.getAddress() << endl;
+    cout << "Location: " << guest.getLocation() << endl;
+    cout << "Age: " << guest.getAge() << endl;
+}
+void Invoice::printOutputCar(Car &vehcile)
+{
     cout << "Make: " << vehcile.getMake() << endl;
     cout << "Model: " << vehcile.getModel() << endl;
     cout << "Year: " << vehcile.getYear() << endl;
     cout << "Low emission: " << vehcile.getLowEmission() << endl;
     cout << "Tinted: " << vehcile.getTinted() << endl;
-
+}
+void Invoice::printOutputMotorcycle(Motorcycle &vehcile)
+{
+    cout << "Make: " << vehcile.getMake() << endl;
+    cout << "Model: " << vehcile.getModel() << endl;
+    cout << "Color: " << vehcile.getColor() << endl;
+    cout << "Year: " << vehcile.getYear() << endl;
+    cout << "CC: " << vehcile.getCC() << endl;
+}
+void Invoice::printOutputLarge(ExtraLarge &vehcile)
+{
+    cout << "Make: " << vehcile.getMake() << endl;
+    cout << "Model: " << vehcile.getModel() << endl;
+    cout << "Year: " << vehcile.getYear() << endl;
+    cout << "Color: " << vehcile.getSpecificType() << endl;
+    cout << "CC: " << vehcile.getPurpose() << endl;
+}
+void Invoice::printOutputTotal(double total)
+{
     cout << "Total" << total << endl;
 }

@@ -71,7 +71,7 @@ int main()
         cout << "Please enter the department you are employed by: ";
         getline(cin, tempDepartment);
 
-        Employee emp(string, string, string, int, string);
+        Employee emp(tempName, tempEmail, tempAddress, tempYears, tempDepartment);
 
         if (vehcileType == 1)
         {
@@ -85,6 +85,11 @@ int main()
             cin >> permitType;
             total = mainPermitType(permitType, annualPermit, 
                  semesterPermit, dayPermit, discount, service);
+
+            Invoice out;
+            out.printOutputEmployee(emp);
+            out.printOutputCar(vehcile);
+            out.printOutputTotal(total);
         }
         else if (vehcileType == 2)
         {
@@ -100,18 +105,29 @@ int main()
             cin >> permitType;
             total = mainPermitType(permitType, annualPermit, 
                  semesterPermit, dayPermit, discount, service);
+            
+            Invoice out;
+            out.printOutputEmployee(emp);
+            out.printOutputMotorcycle(vehicle);
+            out.printOutputTotal(total);
         }
         else if (vehcileType == 3)
         {
             string make {"\0"}, model {"\0"}, specificType {"\0"}, purpose {"\0"};
             int year {0};
-            mainLargeProgram(make, model, year, specificType, purpose);
+            ExtraLarge vehicle;
+            vehicle = mainLargeProgram(make, model, year, specificType, purpose);
 
             // Calculates the total price based on permit
             printPermit();
             cin >> permitType;
             total = mainPermitType(permitType, annualPermit, 
                  semesterPermit, dayPermit, discount, service);
+
+            Invoice out;
+            out.printOutputEmployee(emp);
+            out.printOutputLarge(vehicle);
+            out.printOutputTotal(total);
         }
         else 
         {
@@ -163,7 +179,9 @@ int main()
 
             //Prints the output
             Invoice out;
-            out.printOutput(stud, vehcile, total);
+            out.printOutputStudent(stud);
+            out.printOutputCar(vehcile);
+            out.printOutputTotal(total);
         }
         else if (vehcileType == 2)
         {
@@ -182,18 +200,27 @@ int main()
 
             //Prints the output
             Invoice out;
+            out.printOutputStudent(stud);
+            out.printOutputMotorcycle(vehicle);
+            out.printOutputTotal(total);
         }
         else if (vehcileType == 3)
         {
             string make {"\0"}, model {"\0"}, specificType {"\0"}, purpose {"\0"};
             int year {0};
-            mainLargeProgram(make, model, year, specificType, purpose);
+            ExtraLarge vehcile;
+            vehcile = mainLargeProgram(make, model, year, specificType, purpose);
 
             // Calculates the total price based on permit
             printPermit();
             cin >> permitType;
             total = mainPermitType(permitType, annualPermit, 
                  semesterPermit, dayPermit, discount, service);
+
+            Invoice out;
+            out.printOutputStudent(stud);
+            out.printOutputLarge(vehcile);
+            out.printOutputTotal(total);
         }
         else 
         {
@@ -239,6 +266,11 @@ int main()
             cin >> permitType;
             total = mainPermitType(permitType, annualPermit, 
                  semesterPermit, dayPermit, discount, service);
+
+            Invoice out;
+            out.printOutputVisitor(guest);
+            out.printOutputCar(vehcile);
+            out.printOutputTotal(total);
         }
         else if (vehcileType == 2)
         {
@@ -254,18 +286,29 @@ int main()
             cin >> permitType;
             total = mainPermitType(permitType, annualPermit, 
                  semesterPermit, dayPermit, discount, service);
+            
+            Invoice out;
+            out.printOutputVisitor(guest);
+            out.printOutputMotorcycle(vehicle);
+            out.printOutputTotal(total);
         }
         else if (vehcileType == 3)
         {
             string make {"\0"}, model {"\0"}, specificType {"\0"}, purpose {"\0"};
             int year {0};
-            mainLargeProgram(make, model, year, specificType, purpose);
+            ExtraLarge vehicle;
+            vehicle = mainLargeProgram(make, model, year, specificType, purpose);
 
             // Calculates the total price based on permit
             printPermit();
             cin >> permitType;
             total = mainPermitType(permitType, annualPermit, 
                  semesterPermit, dayPermit, discount, service);
+            
+            Invoice out;
+            out.printOutputVisitor(guest);
+            out.printOutputLarge(vehicle);
+            out.printOutputTotal(total);
         }
         else 
         {
