@@ -12,7 +12,7 @@ class ExtraLarge
         string purpose {"\0"};
     public:
         ExtraLarge() = default;
-        ExtraLarge(string, string, int, string, string);
+        ExtraLarge(string ma, string mo, int y, string s, string p) : make{ma}, model{mo}, year{y}, specificType{s}, purpose{p} {};
 
         bool setMake(string ma);
         bool setModel(string mo);

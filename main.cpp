@@ -54,7 +54,7 @@ int main()
             tempDepartment;
         int tempYears;
 
-        cin.ignore();
+        //cin.ignore();
         cout << "Please enter your full name: ";
         getline(cin, tempName);
 
@@ -70,6 +70,7 @@ int main()
         cin.ignore();
         cout << "Please enter the department you are employed by: ";
         getline(cin, tempDepartment);
+        
 
         Employee emp(tempName, tempEmail, tempAddress, tempYears, tempDepartment);
 

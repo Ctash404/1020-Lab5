@@ -57,6 +57,7 @@ double Invoice::calcDisTotal(double permit, double discount, double service)
 // Prints output of a student and their car
 void Invoice::printOutputStudent(Student &stud)
 {
+    cout << endl;
     cout << "Name: " << stud.getName() << endl;
     cout << "Email: " << stud.getEmail() << endl;
     cout << "Address: " << stud.getAddress() << endl;
@@ -65,6 +66,7 @@ void Invoice::printOutputStudent(Student &stud)
 }
 void Invoice::printOutputEmployee(Employee &emp)
 {
+    cout << endl;
     cout << "Name: " << emp.getName() << endl;
     cout << "Email: " << emp.getEmail() << endl;
     cout << "Address: " << emp.getAddress() << endl;
@@ -73,6 +75,7 @@ void Invoice::printOutputEmployee(Employee &emp)
 }
 void Invoice::printOutputVisitor(Guest &guest)
 {
+    cout << endl;
     cout << "Name: " << guest.getName() << endl;
     cout << "Email: " << guest.getEmail() << endl;
     cout << "Address: " << guest.getAddress() << endl;
@@ -81,6 +84,7 @@ void Invoice::printOutputVisitor(Guest &guest)
 }
 void Invoice::printOutputCar(Car &vehcile)
 {
+    cout << "------------";
     cout << "Make: " << vehcile.getMake() << endl;
     cout << "Model: " << vehcile.getModel() << endl;
     cout << "Year: " << vehcile.getYear() << endl;
@@ -89,6 +93,7 @@ void Invoice::printOutputCar(Car &vehcile)
 }
 void Invoice::printOutputMotorcycle(Motorcycle &vehcile)
 {
+    cout << "------------";
     cout << "Make: " << vehcile.getMake() << endl;
     cout << "Model: " << vehcile.getModel() << endl;
     cout << "Color: " << vehcile.getColor() << endl;
@@ -97,6 +102,7 @@ void Invoice::printOutputMotorcycle(Motorcycle &vehcile)
 }
 void Invoice::printOutputLarge(ExtraLarge &vehcile)
 {
+    cout << "------------";
     cout << "Make: " << vehcile.getMake() << endl;
     cout << "Model: " << vehcile.getModel() << endl;
     cout << "Year: " << vehcile.getYear() << endl;
@@ -105,5 +111,6 @@ void Invoice::printOutputLarge(ExtraLarge &vehcile)
 }
 void Invoice::printOutputTotal(double total)
 {
-    cout << "Total" << total << endl;
+    cout << "------------";
+    cout << "Total: " << total << endl;
 }
