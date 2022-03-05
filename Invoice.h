@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <string>
-#include "StudentCar.h"
+#include "Student.h"
+#include "Car.h"
 using namespace std;
 
 class Invoice

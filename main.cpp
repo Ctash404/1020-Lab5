@@ -1,14 +1,25 @@
 #include <iostream>
 //#include "Employee.h"
 //#include "ExtraLarge.cpp"
-#include "StudentCar.h"
+#include "Student.h"
+#include "Car.h"
 #include "Invoice.h"
+#include "Guest.h"
+#include "Motorcycle.h"
+#include "Large.h"
+#include "Employee.h"
 
 using namespace std;
 
 void printVechile();
 void printPermit();
+
+// Functions to get the vehicle info
 Car mainCarProgram(string make, string model, string carYear, string lowEmission, string tint);
+Motorcycle mainMotorcycleProgram(string make, string model, string color, int year, int cc);
+ExtraLarge mainLargeProgram(string make, string model, int year, string specificType, string purpose);
+
+// Function to get the permit info
 double mainPermitType(int permitType, double annualPermit, 
     double semesterPermit, double dayPermit, double discount, double service);
 
@@ -37,29 +48,69 @@ int main()
     //Employee type
     if (customerType == 1)
     {
+        string tempName, 
+            tempEmail, 
+            tempAddress, 
+            tempDepartment;
+        int tempYears;
 
-        cout << "Shain\n";
-        // Calculates the total price based on permit
-        void printPermit();
-        cin >> permitType;
+        cin.ignore();
+        cout << "Please enter your full name: ";
+        getline(cin, tempName);
 
-        if (permitType == 1)
+        cout << "Please enter your email: ";
+        getline(cin, tempEmail);
+
+        cout << "Please enter your address: ";
+        getline(cin, tempAddress);
+
+        cout << "Please enter the number of years you have been employed by Clemson University: ";
+        cin >> tempYears;
+
+        cin.ignore();
+        cout << "Please enter the department you are employed by: ";
+        getline(cin, tempDepartment);
+
+        Employee emp(string, string, string, int, string);
+
+        if (vehcileType == 1)
         {
-            Invoice voice1(annualPermit, discount, service);
-            total = voice1.calcDisTotal(annualPermit, discount, service);
-            cout << "Total: " << total << endl;
+            string make, model, carYear, 
+            lowEmission, tint; 
+            Car vehcile;
+            //Car vehcile(make, model, carYear, lowEmission, tint); 
+            vehcile = mainCarProgram(make, model, carYear, lowEmission, tint);
+            
+            // Calculates the total price based on permit
+            printPermit();
+            cin >> permitType;
+            total = mainPermitType(permitType, annualPermit, 
+                 semesterPermit, dayPermit, discount, service);
         }
-        else if (permitType == 2)
+        else if (vehcileType == 2)
         {
-            Invoice voice2(semesterPermit, discount, service);
-            total = voice2.calcDisTotal(semesterPermit, discount, service);
-            cout << "Total: " << total << endl;
+            string make, model, color;
+            int year, cc;
+            Motorcycle vehicle;
+            vehicle = mainMotorcycleProgram(make, model, color, year, cc);
+
+            // Calculates the total price based on permit
+            printPermit();
+            cin >> permitType;
+            total = mainPermitType(permitType, annualPermit, 
+                 semesterPermit, dayPermit, discount, service);
         }
-        else if (permitType == 2)
+        else if (vehcileType == 3)
         {
-            Invoice voice3(dayPermit, discount, service);
-            total = voice3.calcDisTotal(dayPermit, discount, service);
-            cout << "Total: " << total << endl;
+            string make, model, specificType, purpose;
+            int year;
+            mainLargeProgram(make, model, year, specificType, purpose);
+
+            // Calculates the total price based on permit
+            printPermit();
+            cin >> permitType;
+            total = mainPermitType(permitType, annualPermit, 
+                 semesterPermit, dayPermit, discount, service);
         }
         else 
         {
@@ -113,7 +164,10 @@ int main()
         }
         else if (vehcileType == 2)
         {
-            cout << "Jacob\n";
+            string make, model, color;
+            int year, cc;
+            Motorcycle vehicle;
+            vehicle = mainMotorcycleProgram(make, model, color, year, cc);
 
             // Calculates the total price based on permit
             printPermit();
@@ -123,7 +177,9 @@ int main()
         }
         else if (vehcileType == 3)
         {
-            cout << "Shain\n";
+            string make, model, specificType, purpose;
+            int year;
+            mainLargeProgram(make, model, year, specificType, purpose);
 
             // Calculates the total price based on permit
             printPermit();
@@ -140,7 +196,27 @@ int main()
     // Visitor type
     else if (customerType == 3)
     {
-        cout << "Jacob\n";
+        string name, email, address, location;
+        int age;
+
+        //gettting user input
+        cout << "Enter age: ";
+        cin >> age;
+
+        cin.ignore();
+        cout << "Enter name: ";
+        getline(cin, name);
+
+        cout << "Enter email: ";
+        getline(cin, email);
+
+        cout << "Enter address: ";
+        getline(cin, address);
+
+        cout << "Enter location: ";
+        getline(cin, location); 
+
+        Guest guest(name, email, address, location, age);
 
         if (vehcileType == 1)
         {
@@ -158,7 +234,10 @@ int main()
         }
         else if (vehcileType == 2)
         {
-            cout << "Jacob\n";
+            string make, model, color;
+            int year, cc;
+            Motorcycle vehicle;
+            vehicle = mainMotorcycleProgram(make, model, color, year, cc);
 
             // Calculates the total price based on permit
             printPermit();
@@ -168,7 +247,9 @@ int main()
         }
         else if (vehcileType == 3)
         {
-            cout << "Shain\n";
+            string make, model, specificType, purpose;
+            int year;
+            mainLargeProgram(make, model, year, specificType, purpose);
 
             // Calculates the total price based on permit
             printPermit();
@@ -210,6 +291,7 @@ void printPermit()
     cout << "Enter the permit type(1, 2, or 3): ";
 }
 
+// The main program for the car class
 Car mainCarProgram(string make, string model, string carYear, string lowEmission, string tint)
 {
     // Car class
@@ -233,7 +315,49 @@ Car mainCarProgram(string make, string model, string carYear, string lowEmission
 
     return vehcile;
 }
+// Main program for motorcycle
+Motorcycle mainMotorcycleProgram(string make, string model, string color, int year, int cc)
+{
+    
+    cout << "Enter make: ";
+    getline(cin, make);
 
+    cout << "Enter model: ";
+    getline(cin, model);
+
+    cout << "Enter color: ";
+    getline(cin, color);
+
+    cout << "Enter Year: ";
+    cin >> year;
+
+    cout << "Enter CC: ";
+    cin >> cc; 
+
+    Motorcycle vehcile(make, model, year, cc, color);
+
+    return vehcile;
+}
+
+// Function to get the large vehicle info
+ExtraLarge mainLargeProgram(string make, string model, int year, string specificType, string purpose)
+{
+    cout << "Please enter your vehicle's make: ";
+    cin >> make;
+    cout << "Please enter your vehicle's model: ";
+    cin >> model;
+    cout << "Please enter your vehicle's year: ";
+    cin >> year;
+    cin.ignore();
+    cout << "Please enter the specific type of vehicle: ";
+    getline(cin, specificType);
+    cout << "Please enter your vehicle's purpose ";
+    getline(cin, purpose);
+    
+    ExtraLarge vehicle(make, model, year, specificType, purpose);
+
+    return vehicle;
+}
 double mainPermitType(int permitType, double annualPermit, 
         double semesterPermit, double dayPermit, double discount, double service)
 {
