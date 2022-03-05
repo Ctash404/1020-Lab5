@@ -84,7 +84,7 @@ void Invoice::printOutputVisitor(Guest &guest)
 }
 void Invoice::printOutputCar(Car &vehcile)
 {
-    cout << "------------";
+    cout << "------------" << endl;
     cout << "Make: " << vehcile.getMake() << endl;
     cout << "Model: " << vehcile.getModel() << endl;
     cout << "Year: " << vehcile.getYear() << endl;
@@ -93,7 +93,7 @@ void Invoice::printOutputCar(Car &vehcile)
 }
 void Invoice::printOutputMotorcycle(Motorcycle &vehcile)
 {
-    cout << "------------";
+    cout << "------------" << endl;
     cout << "Make: " << vehcile.getMake() << endl;
     cout << "Model: " << vehcile.getModel() << endl;
     cout << "Color: " << vehcile.getColor() << endl;
@@ -102,7 +102,7 @@ void Invoice::printOutputMotorcycle(Motorcycle &vehcile)
 }
 void Invoice::printOutputLarge(ExtraLarge &vehcile)
 {
-    cout << "------------";
+    cout << "------------" << endl;
     cout << "Make: " << vehcile.getMake() << endl;
     cout << "Model: " << vehcile.getModel() << endl;
     cout << "Year: " << vehcile.getYear() << endl;
@@ -111,6 +111,6 @@ void Invoice::printOutputLarge(ExtraLarge &vehcile)
 }
 void Invoice::printOutputTotal(double total)
 {
-    cout << "------------";
+    cout << "------------" << endl;
     cout << "Total: " << total << endl;
 }

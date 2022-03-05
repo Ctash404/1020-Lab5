@@ -380,13 +380,12 @@ Motorcycle mainMotorcycleProgram(string make, string model, int year, int cc, st
 {
     
     cout << "Enter make: ";
-    getline(cin, make);
-
+    cin >> make;
     cout << "Enter model: ";
-    getline(cin, model);
+    cin >> model;
 
     cout << "Enter color: ";
-    getline(cin, color);
+    cin >> color;
 
     cout << "Enter Year: ";
     cin >> year;
@@ -426,19 +425,19 @@ double mainPermitType(int permitType, double annualPermit,
     {
         Invoice voice1(annualPermit, discount, service);
         total = voice1.calcTotal(annualPermit, service);
-        cout << "Total: " << total << endl;
+        
     }
     else if (permitType == 2)
     {
         Invoice voice2(semesterPermit, discount, service);
         total = voice2.calcTotal(semesterPermit, service);
-        cout << "Total: " << total << endl;
+        
     }
-    else if (permitType == 2)
+    else if (permitType == 3)
     {
         Invoice voice3(dayPermit, discount, service);
         total = voice3.calcTotal(dayPermit, service);
-        cout << "Total: " << total << endl;
+        
     }
     else 
     {
